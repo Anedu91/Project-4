@@ -1,0 +1,27 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  align-items: center;
+  &__brand {
+    text-transform: uppercase;
+    font-size: 2.4rem;
+    font-weight: 700;
+  }
+  &__list {
+    list-style: none;
+  }
+  &__link {
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    background: #000;
+    color: #fff;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    transition: 0.5s all;
+    &:hover {
+      background: gray;
+    }
+  }
+}

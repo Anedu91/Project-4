@@ -1,6 +1,9 @@
-.container {
-  width: 80vw;
-  margin: auto;
-  height: 100vh;
-  background: blue;
-}
+@import "abstracts/variables";
+
+@import "base/base";
+@import "base/typography";
+
+@import "components/form";
+@import "components/navbar";
+
+@import "pages/home";

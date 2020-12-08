@@ -6,6 +6,34 @@
     <title>Project 4</title>
   </head>
   <body class="body">
-    <div class="container"></div>
+    <nav class="navbar">
+      <p class="navbar__brand">LOGO</p>
+      <ul class="navbar__list">
+        <li class="navbar__item">
+          <a href="#" class="navbar__link">Home</a>
+        </li>
+      </ul>
+    </nav>
+    <main class="main">
+      <h1 class="heading-1">Sentimental text</h1>
+      <section class="form-section">
+        <h2 class="heading-2">Sentimental form</h2>
+        <form action="" id="form" class="form">
+          <div class="form__group">
+            <label for="text" class="form__label"
+              >Introduce your text for sentimental analysis:</label
+            >
+            <textarea
+              name="text"
+              id="text"
+              placeholder="Your text going here..."
+              class="form__input"
+            ></textarea>
+            <span class="danger"></span>
+          </div>
+          <button class="form__button" type="submit">Generate info</button>
+        </form>
+      </section>
+    </main>
   </body>
 </html>

@@ -1,0 +1,18 @@
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.main {
+  padding: 5rem 0;
+  flex: 1;
+}
+.form-section {
+  max-width: 50rem;
+  margin: auto;
+  margin-top: 2rem;
+  border: 1px solid #000;
+  border-radius: 5px;
+  padding: 3rem;
+  box-shadow: 4px 4px 5px 0px rgba(51, 51, 51, 1);
+}

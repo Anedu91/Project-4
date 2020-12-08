@@ -1,5 +1,7 @@
+import { handleSubmit } from "./js/handleSubmit";
 import "./scss/main.scss";
 
-const body = document.querySelector(".body");
+const form = document.querySelector("#form");
+console.log(form);
 
-body.style.cssText = "background:red;";
+form.addEventListener("submit", handleSubmit);

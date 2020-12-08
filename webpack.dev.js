@@ -23,7 +23,7 @@ module.exports = {
       {
         test: /\.scss$/,
         use: [
-          { loader: MiniCssExtractPlugin },
+          { loader: MiniCssExtractPlugin.loader },
           { loader: "css-loader" },
           { loader: "sass-loader" },
         ],
@@ -36,13 +36,14 @@ module.exports = {
       filename: "./index.html",
     }),
     new MiniCssExtractPlugin({
-      filename: "bundle.css",
+      filename: "styles.css",
     }),
     new CleanWebpackPlugin(),
   ],
   devServer: {
     contentBase: path.join(__dirname, "dist"),
-    port: 9000,
+    port: 7000,
     open: true,
+    compress: true,
   },
 };
