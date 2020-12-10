@@ -1,8 +1,8 @@
+import { getData, getSentimental, updateUI, loading } from "./fetchingData";
 function handleSubmit(e) {
   e.preventDefault();
-
+  loading(true);
   let formText = document.querySelector("#text");
-
   if (formText.value === "") {
     formText.classList.add("form__danger");
     document.querySelector(".danger").innerText = "Required";
@@ -11,24 +11,16 @@ function handleSubmit(e) {
     document.querySelector(".danger").innerText = "";
   }
 
-  postData("http://localhost:3000/addText", { text: formText.value });
+  getData("http://localhost:8080/getKey")
+    .then((data) =>
+      getSentimental(
+        "https://api.meaningcloud.com/sentiment-2.1",
+        data.key,
+        formText.value
+      )
+    )
+    .then((data) => updateUI(data))
+    .then(() => loading(false));
 }
-
-const postData = async (url = "", data = {}) => {
-  const response = await fetch(url, {
-    method: "POST",
-    credentials: "same-origin",
-    headers: {
-      "Content-type": "application/json",
-    },
-    body: JSON.stringify(data),
-  });
-  try {
-    const newData = await response.json();
-    return newData;
-  } catch (error) {
-    console.log(error);
-  }
-};
 
 export { handleSubmit };

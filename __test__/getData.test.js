@@ -1,8 +1,12 @@
 import { getData } from "../src/client/js/fetchingData";
 
-describe("Testing the fetching function", () => {
-  test("Testing the getData() function", async () => {
-    const data = await getData("https://swapi.dev/api/people/1/");
-    expect(data.name).toBe("Luke Skywalker");
-  });
+global.fetch = jest.fn(() =>
+  Promise.resolve({
+    json: () => Promise.resolve({ name: "Data test" }),
+  })
+);
+
+it("Testing getData", async () => {
+  const data = await getData("http://localhost:test-data");
+  expect(data.name).toEqual("Data test");
 });
